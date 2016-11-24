@@ -34,13 +34,23 @@ void generateEvent(MouseEvent event) {
     ..style.display = "block"
     ..style.backgroundColor = "#$colorCode";
 
-    // Label that tells the color code
-    var colorLabel = new SpanElement()
-    ..text = "#$colorCode"
+    // Label that says number of color
+    var numberLabel = new SpanElement()
+    ..text = "Color #$i"
+    ..style.display = "block"
     ..style.color = "white"
     ..style.textAlign = "center"
     ..style.fontSize = "14pt";
 
+    // Label that tells the color code
+    var colorLabel = new SpanElement()
+    ..text = "#${colorCode}"
+    ..style.display = "block"
+    ..style.color = "white"
+    ..style.textAlign = "center"
+    ..style.fontSize = "14pt";
+
+    colorBlock.append(numberLabel);
     colorBlock.append(colorLabel);
 
     colorArea.append(colorBlock);
