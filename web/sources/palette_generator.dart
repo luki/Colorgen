@@ -23,11 +23,3 @@ class PaletteGenerator {
   Palette getPalette() => _palette;
 
 }
-
-void main() {
-  var gen = new PaletteGenerator();
-  gen.genPalette(5);
-  for (int i = 0; i < gen.getPalette().colors.length; i++) {
-    print(gen.getPalette().colors[i].hexCode);
-  }
-}
