@@ -13,11 +13,12 @@ class PaletteGenerator {
     List<String> temp_pal = generatePalette(amountOfColors);
     for (int i = 0; i < amountOfColors; i++) {
       Color temp_col = new Color()
-      ..name = ""
       ..hexCode = temp_pal[i];
       _palette.colors.add(temp_col);
     }
   }
+
+  void setPaletteName(String name) => _palette.name = name;
 
   Palette getPalette() => _palette;
 
