@@ -4,9 +4,24 @@
 import 'dart:html';
 import 'sources/palette_generator.dart';
 
+var generateButton = querySelector("#generate-button");
+var colorArea = (querySelector("#color-area") as DivElement);
+var amount = (querySelector("#amount") as InputElement);
+
 void main() {
+
+  generateButton.onClick.listen(generateEvent);
+}
+
+void generateEvent(MouseEvent event) {
+
+  colorArea.children.clear();
+
+  String amnt = amount.value;
+
+  // int amountOfColors = (amountTextfield as InputElement).value;
   var gen = new PaletteGenerator();
-  gen.genPalette(5);
+  gen.genPalette(int.parse(amnt));
   for (int i = 0; i < gen.getPalette().colors.length; i++) {
 
     var colorBlock = new DivElement()
@@ -16,6 +31,7 @@ void main() {
     ..style.marginBottom = "20px"
     ..style.display = "block"
     ..style.backgroundColor = "#${gen.getPalette().colors[i].hexCode}";
-    querySelector("#wrapper").append(colorBlock);
+    colorArea.append(colorBlock);
   }
+
 }
