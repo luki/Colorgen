@@ -6,7 +6,9 @@ class PaletteGenerator {
   int _amountOfColors;
   Palette _palette = new Palette();
 
-  void _setAmountOfColors(int amountOfColors) => _amountOfColors = amountOfColors;
+  void _setAmountOfColors(int amountOfColors) {
+    _amountOfColors = amountOfColors;
+  }
 
   void genPalette(int amountOfColors) {
     _setAmountOfColors(amountOfColors);
@@ -18,7 +20,9 @@ class PaletteGenerator {
     }
   }
 
-  void setPaletteName(String name) => _palette.name = name;
+  void setPaletteName(String name) {
+    _palette.name = name;
+  }
 
   Palette getPalette() => _palette;
 
