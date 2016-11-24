@@ -24,13 +24,25 @@ void generateEvent(MouseEvent event) {
   gen.genPalette(int.parse(amnt));
   for (int i = 0; i < gen.getPalette().colors.length; i++) {
 
+    var colorCode = gen.getPalette().colors[i].hexCode;
+
     var colorBlock = new DivElement()
     // ..classes.add("color")
     ..style.height = "300px"
     ..style.width = "300px"
     ..style.marginBottom = "20px"
     ..style.display = "block"
-    ..style.backgroundColor = "#${gen.getPalette().colors[i].hexCode}";
+    ..style.backgroundColor = "#$colorCode";
+
+    // Label that tells the color code
+    var colorLabel = new SpanElement()
+    ..text = "#$colorCode"
+    ..style.color = "white"
+    ..style.textAlign = "center"
+    ..style.fontSize = "14pt";
+
+    colorBlock.append(colorLabel);
+
     colorArea.append(colorBlock);
   }
 

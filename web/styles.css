@@ -1,11 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+@font-face {
+	font-family: 'Okomito';
+	src: url('resources/Okomito-Medium.eot');
+	src: url('resources/Okomito-Medium.eot?#iefix') format('embedded-opentype'),
+		url('resources/Okomito-Medium.woff') format('woff'),
+		url('resources/Okomito-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Okomito', sans-serif;
 }
 
 .color {
